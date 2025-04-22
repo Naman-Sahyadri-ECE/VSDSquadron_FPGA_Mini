@@ -63,5 +63,150 @@ It toggles periodically based on oscillator frequency — useful for debugging o
 | testwire | Pin 17 | Assigned to frequency_counter_i[5] |Outputs a toggling signal derived from the internal oscillator for testing purposes  |
 
 # Integrating with the VSDSquadron FPGA Mini Board:
+cd
 
+cd VSDSquadron_FM
+
+cd RGB
+
+lsusb
+
+make clean
+
+make build
+
+sudo make flash
+
+Now i observed that i can see only blue colour led is ON because in the given code only blue pin was enabled to 1b'1 and  if i enable other pins also the colour doesn't change frequently. 
+
+This was my output in initially:
+
+https://github.com/user-attachments/assets/3c4db824-a62c-483c-9ff2-4c7a9978229f
+
+So i made the necessary changes in the code to get the RGB output:
+I changed the following part and this is my final output:
+ SB_RGBA_DRV RGB_DRIVER (
+    .RGBLEDEN(1'b1                                            ),
+    .RGB0PWM (frequency_counter_i[24]&frequency_counter_i[23] ),
+    .RGB1PWM (frequency_counter_i[24]&~frequency_counter_i[23]),
+    .RGB2PWM (~frequency_counter_i[24]&frequency_counter_i[23]),
+    .CURREN  (1'b1                                            ),
+    .RGB0    (led_red                                       ), //Actual Hardware connection
+    .RGB1    (led_green                                       ),
+    .RGB2    (led_blue                                        )
+  );
+And the my final output is as shown below:
+
+https://github.com/user-attachments/assets/f50bf64b-0223-4fea-9a7b-cf833d6482be
+
+## My Final working code:
+
+//----------------------------------------------------------------------------
+
+//                                                                          --
+
+//                         Module Declaration                               --
+
+//                                                                          --
+
+//----------------------------------------------------------------------------
+
+module top (
+// outputs
+  
+  output wire led_red  , // Red
+ 
+  output wire led_blue , // Blue
+ 
+  output wire led_green , // Green
+  input wire hw_clk,  // Hardware Oscillator, not the internal oscillator
+  
+  output wire testwire
+);
+
+  wire        int_osc            ;
+  
+  reg  [27:0] frequency_counter_i;
+
+  assign testwire = frequency_counter_i[5];
+ 
+  always @(posedge int_osc) begin
+   
+    frequency_counter_i <= frequency_counter_i + 1'b1;
+  
+  end
+
+
+//----------------------------------------------------------------------------
+
+//                                                                          --
+
+//                       Counter                                            --
+
+//                                                                          --
+
+//----------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------
+
+//                                                                          --
+
+//                       Internal Oscillator                                --
+
+//                                                                          --
+
+//----------------------------------------------------------------------------
+
+  SB_HFOSC #(.CLKHF_DIV ("0b10")) u_SB_HFOSC ( .CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
+
+
+//----------------------------------------------------------------------------
+
+//                                                                          --
+
+//                       Instantiate RGB primitive                          --
+
+//                                                                          --
+
+//----------------------------------------------------------------------------
+
+  SB_RGBA_DRV RGB_DRIVER (
+  
+    .RGBLEDEN(1'b1                                            ),
+    
+    .RGB0PWM (frequency_counter_i[24]&frequency_counter_i[23] ),
+    
+    .RGB1PWM (frequency_counter_i[24]&~frequency_counter_i[23]),
+    
+    .RGB2PWM (~frequency_counter_i[24]&frequency_counter_i[23]),
+    
+    .CURREN  (1'b1                                            ),
+    
+    .RGB0    (led_red                                       ), //Actual Hardware connection
+    
+    .RGB1    (led_green                                       ),
+    
+    .RGB2    (led_blue                                        )
+  
+  );
+  
+  defparam RGB_DRIVER.RGB0_CURRENT = "0b000001";
+  
+  defparam RGB_DRIVER.RGB1_CURRENT = "0b000001";
+  
+  defparam RGB_DRIVER.RGB2_CURRENT = "0b000001";
+
+endmodule
+
+
+## Final PCF file:
+set_io  led_red	39
+
+set_io  led_blue 40
+
+set_io  led_green 41
+
+set_io  hw_clk 20
+
+set_io  testwire 17
 
