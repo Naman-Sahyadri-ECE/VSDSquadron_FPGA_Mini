@@ -95,7 +95,8 @@ Now i observed that i can see only blue colour led is ON because in the given co
 
 This was my output in initially:
 
-https://github.com/user-attachments/assets/3c4db824-a62c-483c-9ff2-4c7a9978229f
+
+https://github.com/user-attachments/assets/d142d73c-bf77-4a6c-8d5a-2f08299026ec
 
 
 So i made the necessary changes in the code to get the RGB output, I changed the following part of the code:
@@ -123,7 +124,8 @@ So i made the necessary changes in the code to get the RGB output, I changed the
   
 And the my final output is as shown below:
 
-https://github.com/user-attachments/assets/f50bf64b-0223-4fea-9a7b-cf833d6482be
+https://github.com/user-attachments/assets/c21a4ea7-ec6e-43a4-947b-a79613b57c69
+
 
 ## My Final working code:
 
