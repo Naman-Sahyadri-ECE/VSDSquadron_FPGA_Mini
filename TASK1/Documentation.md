@@ -81,23 +81,34 @@ Now i observed that i can see only blue colour led is ON because in the given co
 
 This was my output in initially:
 
-https://github.com/user-attachments/assets/3c4db824-a62c-483c-9ff2-4c7a9978229f
+https://github.com/user-attachments/assets/a6c5442d-7d83-4a40-9d1a-e3cedd960e69
 
-So i made the necessary changes in the code to get the RGB output:
-I changed the following part and this is my final output:
+So i made the necessary changes in the code to get the RGB output, I changed the following part of the code:
+ 
  SB_RGBA_DRV RGB_DRIVER (
+    
     .RGBLEDEN(1'b1                                            ),
+    
     .RGB0PWM (frequency_counter_i[24]&frequency_counter_i[23] ),
+    
     .RGB1PWM (frequency_counter_i[24]&~frequency_counter_i[23]),
+    
     .RGB2PWM (~frequency_counter_i[24]&frequency_counter_i[23]),
+    
     .CURREN  (1'b1                                            ),
+    
     .RGB0    (led_red                                       ), //Actual Hardware connection
+    
     .RGB1    (led_green                                       ),
+    
     .RGB2    (led_blue                                        )
+  
   );
+
 And the my final output is as shown below:
 
-https://github.com/user-attachments/assets/f50bf64b-0223-4fea-9a7b-cf833d6482be
+https://github.com/user-attachments/assets/4f274d15-b1c0-408d-8686-f16195d243ad
+
 
 ## My Final working code:
 
