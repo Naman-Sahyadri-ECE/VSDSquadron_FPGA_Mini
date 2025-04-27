@@ -52,7 +52,7 @@ Detailed Circuit Diagram showing Connections between the FPGA and any Peripheral
 
 # Step 3: Implementation
 ### Steps to upload the code to FPGA board:
-1. Create a project folder inside VSDSquadron_FM folder and upload the give verilog codesa and make file in it.
+1. Create a project folder inside VSDSquadron_FM folder and upload the give verilog codes and Makefile in it.
 
     ![Screenshot 2025-04-27 212403](https://github.com/user-attachments/assets/1f07b6e6-0555-4996-856f-fc32ade0c408)
 
