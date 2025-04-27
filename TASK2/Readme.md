@@ -54,7 +54,9 @@ Detailed Circuit Diagram showing Connections between the FPGA and any Peripheral
 ### Steps to upload the code to FPGA board:
 1. Create a project folder inside VSDSquadron_FM folder and upload the give verilog codesa and make file in it.
 
-2. Open in terminal. Connect your board and give the following commands:
+    ![Screenshot 2025-04-27 212403](https://github.com/user-attachments/assets/1f07b6e6-0555-4996-856f-fc32ade0c408)
+
+3. Open in terminal. Connect your board and give the following commands:
    cd
 
    cd VSDSquadron_FM
@@ -81,13 +83,13 @@ That is it. You have successfully finished transmitting the code.
 
 - Open Docklight and verify that your system (not the VM) is connected to the right communication port - in my case it is COM14 and the default was COM3 - and if not, change it through tools > project settings. Also verify that speed is set to 9600.
 
-![Screenshot 2025-04-27 191600](https://github.com/user-attachments/assets/297f512e-8fa4-45f1-b28f-1dade494ab01)
+ ![Screenshot 2025-04-27 191600](https://github.com/user-attachments/assets/297f512e-8fa4-45f1-b28f-1dade494ab01)
 
 - Now, double click on the small blue box in the send sequence below the name and enter a name, select a format and then type your message. Click "Apply" and then verify that this has entered in send sequences. Then, click run option in the top and click the arrow beside the name and verify the result:
 
-![Screenshot 2025-04-27 205051](https://github.com/user-attachments/assets/e59d4230-d59a-44ea-b9cc-b24fdc717b4f)
+ ![Screenshot 2025-04-27 205051](https://github.com/user-attachments/assets/e59d4230-d59a-44ea-b9cc-b24fdc717b4f)
 
-![Screenshot 2025-04-27 192816](https://github.com/user-attachments/assets/c985d80a-329c-4ae5-a5a0-52807c47a0b4)
+ ![Screenshot 2025-04-27 192816](https://github.com/user-attachments/assets/c985d80a-329c-4ae5-a5a0-52807c47a0b4)
 
 
 # Step 5: Documentation
