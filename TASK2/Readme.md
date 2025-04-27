@@ -44,7 +44,11 @@ The module explains six ports:
 # Step 2: Design Documentation
 Block Diagram Illustrating the UART Loopback Architecture.
 
+![Block Diagram](https://github.com/user-attachments/assets/09026b00-ce71-49df-90c6-1276910f4edd)
+
 Detailed Circuit Diagram showing Connections between the FPGA and any Peripheral Devices used.
+
+![Circuit diagram](https://github.com/user-attachments/assets/f89f81a1-daa2-4b23-97ef-26cff4bdeae2)
 
 # Step 3: Implementation
 ### Steps to upload the code to FPGA board:
@@ -65,24 +69,47 @@ Detailed Circuit Diagram showing Connections between the FPGA and any Peripheral
 
    sudo make flash
 
+   ![Screenshot 2025-04-27 205811](https://github.com/user-attachments/assets/70f009b6-f67f-41e1-897b-19edc7bc6057)
+
+
 That is it. You have successfully finished transmitting the code.
 
 
 # Step 4: Testing and Verification
 
-Downlaod Docklight software, which can be downloaded from its website.
+- Downlaod Docklight software, which can be downloaded from its website.
 
-Open Docklight and verify that your system (not the VM) is connected to the right communication port - in my case it is COM6 and the default was COM1 - and if not, change it through tools > project settings. Also verify that speed is set to 9600.
+- Open Docklight and verify that your system (not the VM) is connected to the right communication port - in my case it is COM14 and the default was COM3 - and if not, change it through tools > project settings. Also verify that speed is set to 9600.
 
-Now, double click on the small blue box in the send sequence below the name and enter a name, select a format and then type your message. Click "Apply" and then verify that this has entered in send sequences. Then, click run option in the top and click the arrow beside the name and verify the result:
+![Screenshot 2025-04-27 191600](https://github.com/user-attachments/assets/297f512e-8fa4-45f1-b28f-1dade494ab01)
+
+- Now, double click on the small blue box in the send sequence below the name and enter a name, select a format and then type your message. Click "Apply" and then verify that this has entered in send sequences. Then, click run option in the top and click the arrow beside the name and verify the result:
+
+![Screenshot 2025-04-27 205051](https://github.com/user-attachments/assets/e59d4230-d59a-44ea-b9cc-b24fdc717b4f)
+
+![Screenshot 2025-04-27 192816](https://github.com/user-attachments/assets/c985d80a-329c-4ae5-a5a0-52807c47a0b4)
+
 
 # Step 5: Documentation
 
-Block and Circuit Diagram (respectively)
+### Block Diagram:
 
-Testing Results
+![Block Diagram](https://github.com/user-attachments/assets/09026b00-ce71-49df-90c6-1276910f4edd)
 
-Video demonstrating Loopback Functionality
+### Circuit Diagram:
+
+![Circuit diagram](https://github.com/user-attachments/assets/f89f81a1-daa2-4b23-97ef-26cff4bdeae2)
+
+### Testing Results:
+
+![Screenshot 2025-04-27 192816](https://github.com/user-attachments/assets/52cff499-c2ab-42c3-81e3-89088950deac)
+
+
+### Video demonstrating Loopback Functionality
+
+https://github.com/user-attachments/assets/824a6215-af8d-4d90-97e3-41508c52d6ff
+
+
 
 
 
