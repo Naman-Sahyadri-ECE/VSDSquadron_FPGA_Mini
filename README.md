@@ -239,3 +239,8 @@ set_io  hw_clk 20
 set_io  testwire 17
 
 </details>
+
+<details>
+<summary>TASK2: Implement a UART loopback mechanism where transmitted data is immediately received back, facilitating testing of UART functionality.</summary>
+
+</details>
