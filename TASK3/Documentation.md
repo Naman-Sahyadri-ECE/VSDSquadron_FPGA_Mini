@@ -34,7 +34,12 @@ This is a VHDL implementation of an 8N1 UART transmitter module designed for Fie
 
 Block Diagram
 
+![Block diagram1](https://github.com/user-attachments/assets/c9a8edc1-e49c-4957-9da8-01299da9f4ca)
+
 Circuit Diagram
+
+![Circuit diagram1](https://github.com/user-attachments/assets/71b79414-f6e2-44d9-8d35-78e3a5109d8d)
+
 
 ### Step 3: Implementation
 Steps to Transmit the Code
@@ -66,6 +71,9 @@ Steps of Testing and Verification
 
 5. Then, check that a series of "D"s are generated and the RGB LED is blinking (switching between red, green and blue) .
 
+   ![image](https://github.com/user-attachments/assets/99f4b1b5-5ff1-4322-a496-f948859d66c3)
+
+
 If so, you have successfully completed the task.
 
 ### Step 5: Documentation
@@ -78,5 +86,9 @@ https://github.com/user-attachments/assets/0a63547a-93af-45d1-97dc-7f8e5750cf55
 
 
 Block and Circuit Diagram (respectively)
+
+![Block diagram1](https://github.com/user-attachments/assets/c9a8edc1-e49c-4957-9da8-01299da9f4ca)
+
+![Circuit diagram1](https://github.com/user-attachments/assets/71b79414-f6e2-44d9-8d35-78e3a5109d8d)
 
     
