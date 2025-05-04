@@ -24,7 +24,7 @@ The *uart_tx_sense* module implements a complete **UART transmitter** designed s
 - *tx_out* provides continuous UART stream
 - State transitions ensure reliable data transfer
 
-  ### Port Analysis
+### Port Analysis
 1. **Clock and Reset**
 - *clk*: Drives all sequential operations
 - *reset_n*: Active-low asynchronous reset
@@ -50,21 +50,61 @@ The *uart_tx_sense* module implements a complete **UART transmitter** designed s
 - Controls UART protocol timing
 - Handles start/stop bit generation
 
-  ### Step 2: Design Documentation
+### Step 2: Design Documentation
 
 Block and Circuit Diagram
+
+![BLOCKDIAGRAM3](https://github.com/user-attachments/assets/10b26e0d-1cc9-4daa-8713-7a45678d4a63)
+
+
+![CIRCUITDIAGRAM3](https://github.com/user-attachments/assets/ba727fc1-704e-48ca-a01e-0c68040d2e2f)
+
 
 ### Step 3: Implementation
 Steps to Transmit the Code
 
+1. Create a new folder UART_tx_sense under VSDSquadron_FM folder and upload the codes and Makefile in it.
+2. Then, open terminal and through the commands
+   - cd
+   - cd VSDSquadron_FM
+   - cd uart_tx_sense
+   - lsusb
+   - make clean
+   - make build
+   - sudo make flash
+
+That is all. The code is transmitted.
+
 
 ### Step 4: Testing and Verification
+
 Steps of Testing and Verification
+
+1. Install picocom in the terminal using command sudo apt install picocom
+
+2. ls/dev/tty*
+
+3. You can see dev/ttyUSB0
+
+4. sudo picocom -b 9600 /dev/ttyUSB0
+
+5.  Then, check that a series of "D"s are generated and the RGB LED is red.
+
+6.  Here you cannot see the LED blinking as the time intervals between each 0 and 1 are extremely small.
+
 
 ### Step 5: Documentation
 
 Block and Circuit Diagrams (respectively)
 
+![BLOCKDIAGRAM3](https://github.com/user-attachments/assets/10b26e0d-1cc9-4daa-8713-7a45678d4a63)
+
+
+![CIRCUITDIAGRAM3](https://github.com/user-attachments/assets/ba727fc1-704e-48ca-a01e-0c68040d2e2f)
+
 Video Demonstrating System Transmitting Data
 
-note: here you cannot see the LED blinking as the time intervals between each 0 and 1 are extremely tiny
+https://github.com/user-attachments/assets/caf9e59d-c485-423f-852d-966870ba93b0
+
+
+
