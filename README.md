@@ -575,4 +575,6 @@ https://github.com/user-attachments/assets/caf9e59d-c485-423f-852d-966870ba93b0
 
 </details>
 
-
+<details>
+ <summary>TASK5: Project Themes. </summary>
+</details>
