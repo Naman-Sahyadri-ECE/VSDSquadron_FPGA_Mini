@@ -13,6 +13,7 @@ Circuit:
 
 Working Video:
 
-https://github.com/Naman-Sahyadri-ECE/VSDSquadron_FPGA_Mini/blob/f2b3e43714121e287641d032ec51e8d7fd44c8d7/TASK6/workingvideo1.mp4
+https://github.com/user-attachments/assets/765878e1-adbd-4526-91e3-368cbc57a2f8
+
 
 
